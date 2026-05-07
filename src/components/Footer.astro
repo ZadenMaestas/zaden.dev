@@ -1,0 +1,44 @@
+---
+import {Icon} from "astro-icon/components";---
+<footer>
+    <div class="footer">
+        <div class="row">
+            <div class="footer__text">
+                <p class="text--bold">Copyright © 2026 Zaden Maestas</p>
+                <p>Made with <span class="text--red">&hearts;</span> using AstroJS</p>
+            </div>
+            <div class="footer__links">
+                <a aria-label="LinkedIn Link" href="https://www.linkedin.com/in/zaden-maestas-803b62277/" target="_blank" class="footer__link footer__linkedin__link">
+                    <Icon name="linkedin"/>
+                </a>
+                <a aria-label="Github Link" href="https://github.com/ZadenMaestas/zaden.dev" target="_blank" class="footer__link footer__github__link">
+                    <Icon name="github"/>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        background-color: #181818;
+        padding: 20px;
+        color: white;
+        padding: 8%;
+    }
+
+    .row {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .footer__link {
+        font-size: 35px;
+        color: black;
+        text-decoration: none;
+        padding: 0px 16px;
+    }
+    .footer__github__link:hover, .footer__linkedin__link:hover {
+        filter: blur(1px)
+    }
+</style>

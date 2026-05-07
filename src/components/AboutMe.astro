@@ -1,0 +1,154 @@
+---
+import { Image } from 'astro:assets';
+import {Icon} from "astro-icon/components";
+import profilePicture from '../images/profile-picture.png';
+import undrawIllustration from '../images/undraw_share-everywhere.svg';
+---
+<div class="flex flex-1">
+    <div class="aboutme__info row">
+        <div class="aboutme__info--container">
+            <figure class="aboutme__picture--mask">
+                <Image loading="eager" class="aboutme__picture" src={profilePicture} alt="Zaden Maestas Profile"/>
+            </figure>
+            <h1 class="aboutme__info--title">
+                <span class="wave">👋</span> Hey there! I'm <span class="text--purple">Zaden</span>
+            </h1>
+            <p class="aboutme__info--para">
+                <span class="text--purple text--bold">Passionate fullstack developer</span> focused on building
+                scalable, maintainable software, with hands-on experience across backend systems, frontend
+                applications, and Linux-based environments. I specialize in turning complex problems into
+                efficient, real-world solutions.
+            </p>
+            <div class="aboutme__links">
+                <a aria-label="Linkedin Profile Link" href="https://www.linkedin.com/in/zaden-maestas-803b62277/" target="_blank" class="aboutme__link">
+                    <Icon name="linkedin"/>
+                </a>
+                <a aria-label="Github Profile Link" href="https://github.com/ZadenMaestas" target="_blank" class="aboutme__link">
+                    <Icon name="github"/>
+                </a>
+            </div>
+        </div>
+        <figure class="aboutme__img--container">
+            <Image loading="eager" class="aboutme__img" src={undrawIllustration} alt="About Me Section Illustration"/>
+        </figure>
+    </div>
+</div>
+
+<style>
+    #aboutme {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .aboutme__info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .aboutme__info--container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .aboutme__picture--mask {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 28px;
+        box-shadow: 0 3px 17px rgba(0, 0, 0.25);
+        animation: animate-profile-picture 800ms 200ms backwards;
+    }
+
+    @keyframes animate-profile-picture {
+        0% {
+            transform: scale(0);
+        }
+        80% {
+            transform : scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .aboutme__picture {
+        width: 100%;
+        height: auto;
+    }
+
+    .aboutme__info--title {
+        margin-bottom: 16px;
+        animation: fade-up 650ms 400ms backwards;
+    }
+
+    .aboutme__info--para {
+        font-size: 20px;
+        margin-bottom: 28px;
+        animation: fade-up 650ms 400ms backwards;
+
+    }
+
+    .aboutme__links {
+        animation: fade-up 650ms 400ms backwards;
+    }
+
+    .aboutme__link {
+        font-size: 35px;
+        color: black;
+        text-decoration: none;
+        padding: 0px 16px;
+    }
+
+    @keyframes fade-up {
+        0% {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .aboutme__img--container {
+        padding-top: 3vh;
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .aboutme__img {
+        width: 100%;
+        animation: fade-in 1200ms 800ms backwards;
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes animate-wave {
+        0% {
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: rotate(30deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+    .wave {
+        display: inline-block;
+        animation: animate-wave 500ms infinite ease-in-out;
+    }
+</style>

@@ -1,0 +1,27 @@
+---
+import {Icon} from 'astro-icon/components';
+import Language from './Language.astro';
+---
+<section id="languages">
+    <div class="container">
+        <div class="row">
+            <h1 class="section__title">This is my <span class="text--purple">technology stack</span></h1>
+            <div class="language__list">
+                <Language name="HTML" logo="html5"/>
+                <Language name="CSS" logo="css"/>
+                <Language name="JavaScript" logo="javascript"/>
+                <Language name="Python" logo="python"/>
+                <Language name="Linux" logo="linux"/>
+                <Language name="Jetbrains Suite" logo="jetbrains"/>
+
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    .language__list {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+</style>

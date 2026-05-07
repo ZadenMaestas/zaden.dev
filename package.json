@@ -9,9 +9,18 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint ."
   },
   "dependencies": {
-    "astro": "^6.2.2"
+    "@astrojs/check": "^0.9.9",
+    "@lucide/astro": "^1.14.0",
+    "astro": "^6.2.2",
+    "astro-icon": "^1.1.5",
+    "typescript": "^6.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^10.3.0",
+    "eslint-plugin-astro": "^1.7.0"
   }
 }

@@ -1,17 +1,37 @@
 ---
+import Main from "../layouts/Main.astro";
+import ProjectView from "../components/ProjectView.astro";
+import LanguageSection from "../components/LanguageSection.astro";
+import AboutMe from "../components/AboutMe.astro";
+import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro";
+import deviceSyncProjectPhoto from "../images/devicesync-project-photo.png";
 
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Main>
+    <section id="aboutme">
+        <NavBar/>
+        <AboutMe/>
+    </section>
+    <LanguageSection/>
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">Here are some showcased <span class="text--purple text--bold">projects</span>
+                </h1>
+                <h2 class="section__title">Please note: <span class="text--purple text--bold">more coming soon</span>
+                </h2>
+                <ul class="project__list">
+                    <!-- Avoid using a subtitle of more than 4 terms for responsive design to work properly -->
+                    <ProjectView title="DeviceSync"
+                                 subtitle="HTML, CSS, JavaScript, NodeJS"
+                                 description="DeviceSync is an open source cross-platform note-taking application under the MIT License"
+                                 img={deviceSyncProjectPhoto}
+                                 github="https://github.com/ZadenMaestas/DeviceSync"
+                    />
+                </ul>
+            </div>
+        </div>
+    </section>
+    <Footer/>
+</Main>
