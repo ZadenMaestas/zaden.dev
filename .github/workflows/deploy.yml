@@ -76,7 +76,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Lighthouse
-        uses: treosh/lighthouse-ci-action@11
+        uses: treosh/lighthouse-ci-action@v12
         with:
           urls: ${{ needs.deploy.outputs.url }}
           configPath: .lighthouserc.json
