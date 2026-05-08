@@ -67,6 +67,7 @@ jobs:
           projectName: zadendev
           directory: dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
 
   lighthouse:
     needs: deploy
