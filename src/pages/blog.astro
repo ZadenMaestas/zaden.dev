@@ -1,0 +1,145 @@
+---
+import Main from "../layouts/Main.astro";
+import NavBar from "../components/NavBar.astro";
+
+const matches = import.meta.glob('../pages/posts/*.md', { eager: true });
+const posts = (Object.values(matches) as any[]).sort(
+    (a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
+);
+---
+<Main title="Blog — Zaden Maestas">
+    <NavBar />
+
+    <section class="blog__hero">
+        <div class="row">
+            <h1 class="blog__title">My <span class="text--purple text--bold">Blog</span></h1>
+            <p class="blog__subtitle">Thoughts on software, learning, and building things.</p>
+        </div>
+    </section>
+
+    <section class="blog__posts--section">
+        <div class="row">
+            {posts.map((post) => (
+                <article class="blog__card">
+                    <div class="blog__card--meta">
+                        <time class="blog__card--date">
+                            {new Date(post.frontmatter.pubDate).toLocaleDateString('en-US', {
+                                year: 'numeric', month: 'long', day: 'numeric'
+                            })}
+                        </time>
+                        {post.frontmatter.tags && (
+                            <div class="blog__card--tags">
+                                {post.frontmatter.tags.map((tag: string) => (
+                                    <span class="blog__tag">{tag}</span>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                    <h2 class="blog__card--title">{post.frontmatter.title}</h2>
+                    <p class="blog__card--desc">{post.frontmatter.description}</p>
+                    <a class="blog__card--link" href={post.url}>Read more →</a>
+                </article>
+            ))}
+        </div>
+    </section>
+</Main>
+
+<style>
+    .blog__hero {
+        padding: 60px 0 40px;
+        text-align: center;
+    }
+
+    .blog__title {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+    }
+
+    .blog__subtitle {
+        color: #666;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .blog__posts--section {
+        padding: 0 0 80px;
+    }
+
+    .blog__card {
+        background: #fff;
+        border: 1px solid #e8e8e8;
+        border-radius: 12px;
+        padding: 28px 32px;
+        margin-bottom: 20px;
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .blog__card:hover {
+        box-shadow: 0 4px 24px rgba(96, 48, 177, 0.12);
+        transform: translateY(-2px);
+    }
+
+    .blog__card--meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+    }
+
+    .blog__card--date {
+        font-size: 0.8rem;
+        color: #999;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+    }
+
+    .blog__card--tags {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .blog__tag {
+        font-size: 0.75rem;
+        background: #f0eaff;
+        color: #6030b1;
+        padding: 2px 10px;
+        border-radius: 50px;
+        font-weight: 600;
+    }
+
+    .blog__card--title {
+        text-align: left;
+        font-size: 1.35rem;
+        color: #242424;
+        margin-bottom: 10px;
+        line-height: 1.3;
+    }
+
+    .blog__card--desc {
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    .blog__card--link {
+        color: #6030b1;
+        font-weight: 700;
+        font-size: 0.95rem;
+    }
+
+    .blog__card--link:hover {
+        opacity: 0.75;
+    }
+
+    @media (max-width: 768px) {
+        .blog__title {
+            font-size: 2rem;
+        }
+
+        .blog__card {
+            padding: 20px;
+        }
+    }
+</style>
