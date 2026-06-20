@@ -1,0 +1,289 @@
+---
+import Main from "../layouts/Main.astro";
+import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Main title="Zaden Maestas — Fullstack Software Engineer">
+    <section id="landing-page">
+        <NavBar page="home" />
+        <header class="header">
+            <div class="header__content">
+                <h1 class="title">Hey</h1>
+                <h1 class="title purple">I'm Zaden.</h1>
+                <p class="header__para">
+                    I'm a <b class="purple">Fullstack Software Engineer</b> with a strong passion for building web applications
+                    with great user experiences.
+                    <br>
+                    Here's a bit more <b class="purple click" data-modal-trigger>about me</b>.
+                </p>
+                <div class="social__list">
+                    <a href="https://www.linkedin.com/in/zaden-maestas-803b62277/" target="_blank" class="social__link click">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/ZadenMaestas" target="_blank" class="social__link click">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="/assets/zaden-maestas-resume.pdf" target="_blank" class="social__link click">
+                        <i class="fas fa-file-pdf"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <a href="#">
+            <button class="mail__btn click" data-modal-trigger>
+                <i class="fas fa-envelope"></i>
+            </button>
+        </a>
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click"></div>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
+                <h4 class="modal__sub-title modal__sub-title--about">Fullstack Software Engineer.</h4>
+                <p class="modal__para">
+                    I'm a 19-year-old Colorado-based <b class="purple">Fullstack Software Engineer</b>
+                    with experience building web applications at local tech company
+                    <b class="purple"><a href="https://denverpc.tech">DenverPC.tech</a></b>.
+                    <br>
+                    I build modern web experiences with <b class="purple">Astro</b>,
+                    <b class="purple">TypeScript</b> and <b class="purple">Hono</b>, deploying on
+                    <b class="purple">Cloudflare</b>'s edge platform — and I'm always working on a
+                    creative side project like <b class="purple">BookNook</b>, my self-hosted
+                    book & comic library manager.
+                </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="CSS">
+                        <span class="language__name">CSS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/typescript-3521774-2945272.png" alt="TypeScript">
+                        <span class="language__name">TypeScript</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" alt="Astro">
+                        <span class="language__name">Astro</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" alt="React">
+                        <span class="language__name">React</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://hono.dev/images/hono-title.png" alt="Hono">
+                        <span class="language__name">Hono</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://sequelize.org/img/logo.svg" alt="Sequelize">
+                        <span class="language__name">Sequelize</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite">
+                        <span class="language__name">SQLite</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/docker-226091.png" alt="Docker">
+                        <span class="language__name">Docker</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bun/bun-original.svg" alt="Bun">
+                        <span class="language__name">Bun</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+                        <span class="language__name">Linux</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                        <span class="language__name">Python</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fas fa-times modal__exit click" data-modal-trigger></i>
+                <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+                <h3 class="modal__sub-title modal__sub-title--contact">I'm currently open to new opportunities.</h3>
+                <form id="contact__form">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input class="input" name="user_name" type="text" required>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Email</label>
+                        <input class="input" name="user_email" type="email" required>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea class="input" name="message" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Send it my way</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! Looking forward to speaking to you soon.
+                </div>
+            </div>
+        </div>
+        <img src="/assets/semi circle.svg" class="shape shape--0" alt="">
+        <img src="/assets/circle.svg" class="shape shape--1" alt="">
+        <img src="/assets/squiggly.svg" class="shape shape--2" alt="">
+        <img src="/assets/circle.svg" class="shape shape--3" alt="">
+        <img src="/assets/triangle.svg" class="shape shape--4" alt="">
+        <img src="/assets/circle.svg" class="shape shape--5" alt="">
+        <img src="/assets/squiggly.svg" class="shape shape--6" alt="">
+        <img src="/assets/circle.svg" class="shape shape--7" alt="">
+        <img src="/assets/semi circle.svg" class="shape shape--8" alt="">
+    </section>
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">
+                    Here are some of my <span class="purple">projects</span>
+                </h1>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="/assets/booknook-mockup.png" class="project__img" alt="BookNook project screenshot">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">BookNook</h3>
+                                <h4 class="project__description--sub-title">TypeScript, Bun, SQLite, Sequelize, Docker</h4>
+                                <p class="project__description--para">
+                                    BookNook is a self-hosted book and comic library manager built for
+                                    personal use. It allows you to organize, browse, and read your
+                                    collection from a clean web interface — with support for both
+                                    books and comic formats. Deployed via Docker and live at
+                                    booknook.zaden.dev.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/ZadenMaestas/booknook-app" target="_blank" class="project__description--link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://booknook.zaden.dev" target="_blank" class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="/assets/shapetutor-mockup.png" class="project__img" alt="ShapeTutor project screenshot">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">ShapeTutor</h3>
+                                <h4 class="project__description--sub-title">HTML, CSS, JavaScript</h4>
+                                <p class="project__description--para">
+                                    ShapeTutor is a browser-based shape-matching game built as a personal
+                                    challenge to create a web game from scratch — no frameworks or build tools.
+                                    Match 3 of the same shape in a row to clear them. Themed after KPop Demon
+                                    Hunters as a gift for my niece Zi.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/ZadenMaestas/ShapeTutor" target="_blank" class="project__description--link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://zadenmaestas.github.io/ShapeTutor/" target="_blank" class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="/assets/sutton-chiro-mockup.png" class="project__img" alt="Sutton Chiropractic project screenshot">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">Sutton Chiropractic & Acupuncture</h3>
+                                <h4 class="project__description--sub-title">TypeScript, Hono, JSX, Cloudflare Workers, D1</h4>
+                                <p class="project__description--para">
+                                    A full-stack website for a Denver chiropractic clinic, built as a single
+                                    Cloudflare Worker using Hono with server-rendered JSX. Features an
+                                    appointment request API and a staff admin panel, all backed by Cloudflare
+                                    D1 — zero cold starts, deployed entirely on the edge.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://sutton-chiro.zadenmaestasdev.workers.dev/" target="_blank" class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <Footer showContact={true} />
+</Main>
+
+<script>
+    const scaleFactor = 1 / 20;
+
+    function moveBackground(event: MouseEvent) {
+        const shapes = document.querySelectorAll<HTMLElement>(".shape");
+        const x = event.clientX * scaleFactor;
+        const y = event.clientY * scaleFactor;
+
+        for (let i = 0; i < shapes.length; ++i) {
+            const isOdd = i % 2 !== 0;
+            const boolInt = isOdd ? -1 : 1;
+            shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px) rotate(${x * boolInt * 10}deg)`;
+        }
+    }
+
+    function toggleModal() {
+        document.body.classList.toggle("modal--open");
+    }
+
+    document.getElementById("landing-page")?.addEventListener("mousemove", moveBackground);
+
+    document.querySelectorAll("[data-modal-trigger]").forEach(el => {
+        el.addEventListener("click", (e) => {
+            e.preventDefault();
+            if ((e.currentTarget as HTMLElement).hasAttribute("data-scroll-top")) {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                const onScroll = () => {
+                    if (window.scrollY === 0) {
+                        window.removeEventListener("scroll", onScroll);
+                        toggleModal();
+                    }
+                };
+                window.addEventListener("scroll", onScroll);
+                return;
+            }
+            toggleModal();
+        });
+    });
+
+    const form = document.getElementById("contact__form");
+    form?.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const loading = document.querySelector(".modal__overlay--loading");
+        const success = document.querySelector(".modal__overlay--success");
+        loading?.classList.add("modal__overlay--visible");
+
+        try {
+            // @ts-ignore
+            await emailjs.sendForm("default_service", "template_wvuioaf", event.target);
+            loading?.classList.remove("modal__overlay--visible");
+            success?.classList.add("modal__overlay--visible");
+        } catch {
+            loading?.classList.remove("modal__overlay--visible");
+            alert("The email service is temporarily unavailable. Please contact me directly at zadenmaestasdev@gmail.com");
+        }
+    });
+</script>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script is:inline>
+    emailjs.init("jhmnZlBH9SzE_4viI");
+</script>

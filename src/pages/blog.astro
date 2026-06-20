@@ -1,0 +1,49 @@
+---
+import Main from "../layouts/Main.astro";
+import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro";
+
+const matches = import.meta.glob('../pages/posts/*.md', { eager: true });
+const posts = (Object.values(matches) as any[]).sort(
+    (a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
+);
+---
+
+<Main title="Blog — Zaden Maestas">
+    <NavBar page="blog" />
+
+    <section class="blog__hero">
+        <div class="row">
+            <h1 class="blog__title">My <span class="purple">Blog</span></h1>
+            <p class="blog__subtitle">Thoughts on software, learning, and building things.</p>
+        </div>
+    </section>
+
+    <section class="blog__posts--section">
+        <div class="row">
+            {posts.map((post) => (
+                <article class="blog__card">
+                    <div class="blog__card--meta">
+                        <time class="blog__card--date">
+                            {new Date(post.frontmatter.pubDate).toLocaleDateString('en-US', {
+                                year: 'numeric', month: 'long', day: 'numeric'
+                            })}
+                        </time>
+                        {post.frontmatter.tags && (
+                            <div class="blog__card--tags">
+                                {post.frontmatter.tags.map((tag: string) => (
+                                    <span class="blog__tag">{tag}</span>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                    <h2 class="blog__card--title">{post.frontmatter.title}</h2>
+                    <p class="blog__card--desc">{post.frontmatter.description}</p>
+                    <a class="blog__card--link" href={post.url}>Read more →</a>
+                </article>
+            ))}
+        </div>
+    </section>
+
+    <Footer showContact={false} />
+</Main>
