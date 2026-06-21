@@ -273,22 +273,22 @@ import Footer from "../components/Footer.astro";
 
     document.getElementById("landing-page")?.addEventListener("mousemove", moveBackground);
 
-    document.querySelectorAll("[data-modal-trigger]").forEach(el => {
-        el.addEventListener("click", (e) => {
-            e.preventDefault();
-            if ((e.currentTarget as HTMLElement).hasAttribute("data-scroll-top")) {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-                const onScroll = () => {
-                    if (window.scrollY === 0) {
-                        window.removeEventListener("scroll", onScroll);
-                        toggleModal();
-                    }
-                };
-                window.addEventListener("scroll", onScroll);
-                return;
-            }
-            toggleModal();
-        });
+    document.addEventListener("click", (e) => {
+        const trigger = (e.target as HTMLElement).closest("[data-modal-trigger]");
+        if (!trigger) return;
+        e.preventDefault();
+        if (trigger.hasAttribute("data-scroll-top")) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            const onScroll = () => {
+                if (window.scrollY === 0) {
+                    window.removeEventListener("scroll", onScroll);
+                    toggleModal();
+                }
+            };
+            window.addEventListener("scroll", onScroll);
+            return;
+        }
+        toggleModal();
     });
 
     const form = document.getElementById("contact__form");
@@ -303,6 +303,11 @@ import Footer from "../components/Footer.astro";
             await emailjs.sendForm("default_service", "template_wvuioaf", event.target);
             loading?.classList.remove("modal__overlay--visible");
             success?.classList.add("modal__overlay--visible");
+            setTimeout(() => {
+                success?.classList.remove("modal__overlay--visible");
+                toggleModal();
+                (event.target as HTMLFormElement)?.reset();
+            }, 3000);
         } catch {
             loading?.classList.remove("modal__overlay--visible");
             alert("The email service is temporarily unavailable. Please contact me directly at zadenmaestasdev@gmail.com");
