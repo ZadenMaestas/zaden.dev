@@ -1,7 +1,13 @@
 ---
+import { Image } from "astro:assets";
 import Main from "../layouts/Main.astro";
 import NavBar from "../components/NavBar.astro";
 import Footer from "../components/Footer.astro";
+
+import booknookImg from "../assets/booknook-mockup.png";
+import catamineImg from "../assets/catamine-mockup.png";
+import shapetutorImg from "../assets/shapetutor-mockup.png";
+import suttonImg from "../assets/sutton-chiro-mockup.png";
 ---
 
 <Main title="Zaden Maestas — Fullstack Software Engineer">
@@ -150,7 +156,7 @@ import Footer from "../components/Footer.astro";
                 <ul class="project__list">
                     <li class="project">
                         <div class="project__wrapper">
-                            <img src="/assets/booknook-mockup.png" class="project__img" alt="BookNook project screenshot">
+                            <Image src={booknookImg} class="project__img" alt="BookNook project screenshot" width={800} format="webp" quality={80} loading="lazy" />
                             <div class="project__wrapper--bg"></div>
                             <div class="project__description">
                                 <h3 class="project__description--title">BookNook</h3>
@@ -175,7 +181,7 @@ import Footer from "../components/Footer.astro";
                     </li>
                     <li class="project">
                         <div class="project__wrapper">
-                            <img src="./assets/catamine-mockup.png" class="project__img" alt="">
+                            <Image src={catamineImg} class="project__img" alt="Catamine project screenshot" width={800} format="webp" quality={80} loading="lazy" />
                             <div class="project__wrapper--bg"></div>
                             <div class="project__description">
                                 <h3 class="project__description--title">
@@ -202,7 +208,7 @@ import Footer from "../components/Footer.astro";
                     </li>
                     <li class="project">
                         <div class="project__wrapper">
-                            <img src="/assets/shapetutor-mockup.png" class="project__img" alt="ShapeTutor project screenshot">
+                            <Image src={shapetutorImg} class="project__img" alt="ShapeTutor project screenshot" width={800} format="webp" quality={80} loading="lazy" />
                             <div class="project__wrapper--bg"></div>
                             <div class="project__description">
                                 <h3 class="project__description--title">ShapeTutor</h3>
@@ -226,7 +232,7 @@ import Footer from "../components/Footer.astro";
                     </li>
                     <li class="project">
                         <div class="project__wrapper">
-                            <img src="/assets/sutton-chiro-mockup.png" class="project__img" alt="Sutton Chiropractic project screenshot">
+                            <Image src={suttonImg} class="project__img" alt="Sutton Chiropractic project screenshot" width={800} format="webp" quality={80} loading="lazy" />
                             <div class="project__wrapper--bg"></div>
                             <div class="project__description">
                                 <h3 class="project__description--title">Sutton Chiropractic & Acupuncture</h3>
